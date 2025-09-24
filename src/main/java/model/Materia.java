@@ -90,4 +90,19 @@ public abstract class Materia {
     public int calcularTotalHoras() {
         return numHorasSemanales;
     }
+    public String agregarEstudiante(Estudiante estudiante) {
+        listaEstudiantes.add(estudiante);
+        return "El estudiante ha sido añadido correctamente";
+    }
+    public String agregarEstudiantes(ArrayList<Estudiante> estudiantes) {
+        listaEstudiantes.addAll(estudiantes);
+        return "Los estudiantes han sido añadidos exitosamente";
+    }
+    public String listarEstudiantesMatriculados() {
+        StringBuilder resultado = new StringBuilder();
+        for (Estudiante estudiante : listaEstudiantes) {
+            resultado.append("Estudiante: ").append(estudiante.getNombre()).append("\n");
+        }
+        return resultado.toString();
+    }
 }

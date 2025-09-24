@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Programa {
     private String nombre;
@@ -126,4 +127,13 @@ public class Programa {
             return "La materia ha sido actualizado exitosamente";
         } else return "La materia no ha sido encontrada";
     }
+    public ArrayList<Materia> consultarMateriasSemestre(int num) {
+        return listaMaterias.stream().filter(m -> Integer.valueOf(m.getSemestre()).equals(num)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    public String asociarProfesorMateria(Profesor profesor, Materia materia) {
+        materia.setProfesor(profesor);
+        return "El profesor de la materia "+materia.getNombre()+" ha sido asociado correctamente";
+    }
+    //inscribir estudiantes varias materias y listar estudiantes matriculados en una materia
+
 }
