@@ -4,7 +4,8 @@ public class ProfesorCatedra extends Profesor{
     private int numHorasContratadas;
     private String empresaTrabaja;
 
-    public ProfesorCatedra(int numHorasContratadas, String empresaTrabaja) {
+    public ProfesorCatedra(String id, String nombre, String tituloAcademico, int añosExp, Programa programa, int numHorasContratadas, String empresaTrabaja) {
+        super(id, nombre, tituloAcademico, añosExp, programa);
         this.numHorasContratadas = numHorasContratadas;
         this.empresaTrabaja = empresaTrabaja;
     }

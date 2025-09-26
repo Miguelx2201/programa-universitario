@@ -87,15 +87,30 @@ public abstract class Materia {
         this.programa = programa;
     }
 
+    @Override
+    public String toString() {
+        return "Materia{" +
+                "codigo='" + codigo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", numHorasSemanales=" + numHorasSemanales +
+                ", creditos=" + creditos +
+                ", semestre=" + semestre +
+                ", profesor=" + profesor.getNombre() +
+                ", listaEstudiantes=" + listaEstudiantes +
+                ", programa=" + programa.getNombre() +
+                '}';
+    }
+
     public int calcularTotalHoras() {
         return numHorasSemanales;
     }
     public String agregarEstudiante(Estudiante estudiante) {
         listaEstudiantes.add(estudiante);
+        estudiante.getListaMaterias().add(this);
         return "El estudiante ha sido añadido correctamente";
     }
     public String agregarEstudiantes(ArrayList<Estudiante> estudiantes) {
-        listaEstudiantes.addAll(estudiantes);
+        estudiantes.forEach(this::agregarEstudiante);
         return "Los estudiantes han sido añadidos exitosamente";
     }
     public String listarEstudiantesMatriculados() {

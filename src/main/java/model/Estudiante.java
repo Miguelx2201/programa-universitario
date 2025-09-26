@@ -66,4 +66,23 @@ public abstract class Estudiante {
     public void setPrograma(Programa programa) {
         this.programa = programa;
     }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", documento='" + documento + '\'' +
+                ", semestreActual=" + semestreActual +
+                ", programa=" + programa.getNombre() +
+                '}';
+    }
+
+    public String calcularCreditosCursando() {
+        int resultado = 0;
+        for (Materia materia : listaMaterias) {
+        resultado += materia.getCreditos();
+        }
+        return "Los creditos que cursa el estudiante son "+resultado;
+    }
 }

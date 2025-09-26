@@ -10,6 +10,14 @@ public abstract class Profesor {
     private ArrayList<Materia> listaMaterias;
     private Programa programa;
 
+    public Profesor(String id, String nombre, String tituloAcademico, int añosExp, Programa programa) {
+        this.id = id;
+        this.nombre = nombre;
+        this.tituloAcademico = tituloAcademico;
+        this.añosExp = añosExp;
+        this.programa = programa;
+    }
+
     public String getId() {
         return id;
     }
@@ -56,5 +64,17 @@ public abstract class Profesor {
 
     public void setPrograma(Programa programa) {
         this.programa = programa;
+    }
+
+    @Override
+    public String toString() {
+        return "Profesor{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", tituloAcademico='" + tituloAcademico + '\'' +
+                ", añosExp=" + añosExp +
+                ", listaMaterias=" + listaMaterias +
+                ", programa=" + programa.getNombre() +
+                '}';
     }
 }

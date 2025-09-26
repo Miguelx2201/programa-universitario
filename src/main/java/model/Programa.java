@@ -49,6 +49,13 @@ public class Programa {
         this.listaProfesores = listaProfesores;
     }
 
+    @Override
+    public String toString() {
+        return "Programa{" +
+                "nombre='" + nombre + '\'' +
+                '}';
+    }
+
     public Optional<Profesor> buscarProfesor(String id) {
         return listaProfesores.stream().filter(p -> p.getId().equals(id)).findFirst();
     }
@@ -134,6 +141,5 @@ public class Programa {
         materia.setProfesor(profesor);
         return "El profesor de la materia "+materia.getNombre()+" ha sido asociado correctamente";
     }
-    //inscribir estudiantes varias materias y listar estudiantes matriculados en una materia
 
 }

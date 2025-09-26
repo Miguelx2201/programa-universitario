@@ -4,7 +4,8 @@ public class ProfesorPlanta extends Profesor{
     private String proyectoInvestigacion;
     private DedicacionProfesor dedicacionProfesor;
 
-    public ProfesorPlanta(String proyectoInvestigacion, DedicacionProfesor dedicacionProfesor) {
+    public ProfesorPlanta(String id, String nombre, String tituloAcademico, int añosExp, Programa programa, String proyectoInvestigacion, DedicacionProfesor dedicacionProfesor) {
+        super(id, nombre, tituloAcademico, añosExp, programa);
         this.proyectoInvestigacion = proyectoInvestigacion;
         this.dedicacionProfesor = dedicacionProfesor;
     }
